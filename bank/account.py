@@ -66,3 +66,8 @@ class BankAccount:
             print("Transfer SuccessFully")
             return True
 
+    def statement(self):
+         print(f"--------{self.owner} Statements------")
+         for i in self.transaction:
+              print(f"{i[0]} - {self.format_money(i[1])} - {self.format_money(i[2])}")
+

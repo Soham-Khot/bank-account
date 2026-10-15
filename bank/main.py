@@ -4,7 +4,7 @@ def main():
     accounts = {}
     acc = 1
     while True:
-        choice = input("1.Open Account\n2.Deposit\n3.Withdraw\n4.transfer\n5.list\n6.Quit:")
+        choice = input("1.Open Account\n2.Deposit\n3.Withdraw\n4.transfer\n5.list\n6.Statements\n7.Quit:")
         print(choice)
         if choice == "1":
             owner = input("Enter your name : ")
@@ -60,6 +60,13 @@ def main():
             print("--------ALL ACCOUNTS--------")
             for i,j in accounts.items():
                 print(f"account name : {i} | account owner : {j.owner} | account balance : {j.balance}")
+
+        elif choice=="6" :
+                acc_name = input("Enter your account : ")
+                if acc_name in accounts:
+                    accounts[acc_name].statement()
+                else:
+                    print("You Don't have account")
         else:
             break
 
